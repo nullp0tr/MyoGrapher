@@ -7,7 +7,7 @@ class MyoGrapher(object):
         self.screen = pygame.display.set_mode((self.width, self.height))
         self.last_values = None
 
-    def plot(self, values, drawLines=False):
+    def plot(self, values, drawLines=False, curve=True):
         if self.last_values is None:
             self.last_values = values
             return
@@ -31,7 +31,8 @@ class MyoGrapher(object):
                 self.screen.fill((c, c, c), (self.width - D, i * self.height / division_lines, D, (i + 1) * self.height / division_lines - i * self.height / division_lines))
 
         pygame.display.flip()
-        last_values = values
+        if curve:
+            self.last_values = values
 
     def emg_plot(self, emg):
         self.plot([e / 2000. for e in emg])
