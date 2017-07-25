@@ -34,5 +34,5 @@ class MyoGrapher(object):
         if curve:
             self.last_values = values
 
-    def emg_plot(self, emg):
-        self.plot([e / 2000. for e in emg])
+    def emg_plot(self, emg, drawLines=False, curve=True):
+        self.plot([e / 2000. for e in emg], drawLines=drawLines, curve=curve)
