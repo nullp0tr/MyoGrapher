@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup (
     name='MyoGrapher',
@@ -6,6 +6,8 @@ setup (
     description='Portable plotting for MYO EMG data',
     url='https://github.com/RaquenaTeam/MyoGrapher',
     author='nullp0tr',
+    py_modules=['MyoGrapher'],
+    packages=find_packages(),
     author_email='ahmed@shnaboo.com',
     license='MIT',
     classifiers=[
@@ -20,6 +22,7 @@ setup (
         'Programming Language :: Python :: 3.2',
         'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: 3.5',
     ],
 
     keywords='Myo EMG IMU graphing plotting',
